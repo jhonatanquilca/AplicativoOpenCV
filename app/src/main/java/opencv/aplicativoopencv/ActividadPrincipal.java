@@ -1,21 +1,37 @@
 package opencv.aplicativoopencv;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import org.opencv.android.OpenCVLoader;
+
 public class ActividadPrincipal extends AppCompatActivity {
 
+    /**
+     * funcion de prueva opencv
+     */
+    static {
+        if (!OpenCVLoader.initDebug()) {
+            Log.i("opencv", "Inicialization failed");
+        } else {
+            Log.i("opencv", "Inicialization successfull");
+
+        }
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_actividad_principal);
-        /**
-         * otro comentario
-         */
-        Toast.makeText(getApplicationContext(),"MI TOAST",Toast.LENGTH_SHORT).show();
+        if (!OpenCVLoader.initDebug()) {
+            Toast.makeText(getApplicationContext(),"opencv Inicialization failed",Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(getApplicationContext(),"opencv Inicialization successfull",Toast.LENGTH_SHORT).show();
+
+        }
 
     }
 
