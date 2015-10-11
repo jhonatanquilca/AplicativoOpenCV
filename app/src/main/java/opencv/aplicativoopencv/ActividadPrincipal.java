@@ -12,8 +12,11 @@ public class ActividadPrincipal extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_actividad_principal);
-        // comentario
+        /**
+         * otro comentario
+         */
         Toast.makeText(getApplicationContext(),"MI TOAST",Toast.LENGTH_SHORT).show();
+
     }
 
     @Override
